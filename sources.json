@@ -1,0 +1,60 @@
+{
+  "checked": "2026-09-24",
+  "sources": [
+    {
+      "id": "p-faq",
+      "title": "Pingcoin FAQ",
+      "url": "https://pingcoin.com/docs/faq"
+    },
+    {
+      "id": "p-how",
+      "title": "Pingcoin usage guide",
+      "url": "https://pingcoin.com/docs/how-to-use"
+    },
+    {
+      "id": "p-ios",
+      "title": "Pingcoin \u00b7 US App Store",
+      "url": "https://apps.apple.com/us/app/pingcoin-gold-silver-tester/id6754670308"
+    },
+    {
+      "id": "p-android",
+      "title": "Pingcoin \u00b7 Google Play",
+      "url": "https://play.google.com/store/apps/details?id=com.pingcoin.android.pingcoin"
+    },
+    {
+      "id": "s-ios",
+      "title": "StackerTools \u00b7 US App Store",
+      "url": "https://apps.apple.com/us/app/stackertools-app/id6502847897"
+    },
+    {
+      "id": "s-android",
+      "title": "StackerTools \u00b7 Google Play",
+      "url": "https://play.google.com/store/apps/details?id=com.soundmoneymetals.stackertools"
+    },
+    {
+      "id": "s-dev",
+      "title": "Sound Money Metals \u00b7 app access",
+      "url": "https://soundmoneymetals.us/"
+    },
+    {
+      "id": "s-shop",
+      "title": "Pocket Pinger \u00b7 developer bundle",
+      "url": "https://coinpingtest.com/"
+    },
+    {
+      "id": "s-web",
+      "title": "StackerTools \u00b7 web app",
+      "url": "https://stackertools.com/home"
+    },
+    {
+      "id": "apple",
+      "title": "Apple \u00b7 downloading apps",
+      "url": "https://support.apple.com/en-us/102590"
+    },
+    {
+      "id": "google",
+      "title": "Google \u00b7 downloading apps",
+      "url": "https://support.google.com/android/answer/9457058?hl=en"
+    }
+  ]
+}
