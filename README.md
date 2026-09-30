@@ -30,6 +30,10 @@ Designed for bullion collectors, shops and institutions, with readable text, lar
 
 ## Inside the guide
 
+- **Scroll-driven product reveal** using a silent, optimized Omega video.
+- **Coin close-up video** with playback controls and an illustrative-wave label.
+- **Motion controls** that respect reduced-motion preferences and keep setup one click away.
+
 - **Device-specific directions** for Android phones and tablets, iPhone, iPad, Windows, Mac and Linux.
 - **App screen examples** that help you recognize coin selection and testing screens.
 - **Browser testing instructions** for using both services on a computer.
@@ -69,7 +73,8 @@ Plain HTML, CSS and JavaScript. **No installation, account, API key or build ste
 | File | Purpose |
 | --- | --- |
 | `index.html` | Page structure, device choices, readiness checks and help |
-| `styles.css` | Responsive layout and readable controls |
+| `styles.css` + `modern.css` | Responsive layout, cinematic introduction and readable cards |
+| `motion.js` | Scroll-linked video and motion preferences |
 | `app.js` | Guide selection and product gallery |
 | `content.js` | App-specific English instructions |
 | `assets/` | Product views and app screen examples |
