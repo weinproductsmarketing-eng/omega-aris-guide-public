@@ -48,15 +48,5 @@
  document.addEventListener('pointerdown',reconcileCoin,{passive:true});
  document.addEventListener('visibilitychange',()=>{reconcileCoin();schedule();});
  window.addEventListener('pageshow',()=>{reconcileCoin();schedule();});
- // Ease through the loop boundary instead of cutting directly to the first frame.
- let fadeFrame=0;
- function fadeCoin(){
-  const duration=coin.duration, time=coin.currentTime, edge=.45;
-  const amount=Number.isFinite(duration)?Math.max(0,Math.min(1,time/edge,(duration-time)/edge)):1;
-  coin.style.opacity=String(amount*amount*(3-2*amount));
-  if(!coin.paused&&!coin.ended)fadeFrame=requestAnimationFrame(fadeCoin);
- }
- coin.addEventListener('play',()=>{cancelAnimationFrame(fadeFrame);fadeCoin();});
- coin.addEventListener('pause',()=>{cancelAnimationFrame(fadeFrame);coin.style.opacity='1';});
  apply();
 })();
