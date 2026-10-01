@@ -1,7 +1,7 @@
 (() => {
   const data=window.GUIDE_CONTENT; let device='android', app='pingcoin';
   const out=document.getElementById('guide');
-  const step=(n,title,body)=>`<article class="step"><span class="step-number">${n}</span><div><h4>${title}</h4>${body}</div></article>`;
+  const step=(n,title,body)=>`<article class="step"><span class="step-number">${n}</span><div><h4>${title}</h4>${body}${window.GuideVisuals.step(n,device,app,data)}</div></article>`;
   function render(){
     const a=data.apps[app], apple=device==='iphone'||device==='ipad';
     document.querySelectorAll('[data-device]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.device===device)));
