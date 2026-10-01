@@ -8,3 +8,12 @@
 body{overflow-x:clip}.reveal-video{left:32%;width:68%;object-fit:contain;object-position:center}.cinema-shade{background:linear-gradient(90deg,#090e12 0%,#090e12ed 25%,#090e1270 48%,transparent 72%),linear-gradient(0deg,#090e1290,transparent 25%)}.cinema h1{max-width:720px;font-size:clamp(46px,5.4vw,78px)}
 @media(max-width:900px) and (min-width:601px){.reveal-video{left:30%;width:80%}.cinema h1{font-size:54px}.cinema-copy{padding-top:8vh}}
 @media(max-width:600px){.reveal-video{left:0;width:100%;top:39%;height:55%;object-fit:contain}.cinema-shade{background:linear-gradient(180deg,#090e12 1%,#090e12dd 25%,transparent 53%,#090e12aa 100%)}.cinema h1{font-size:clamp(40px,10vw,55px)}}
+
+/* Airy product gallery with a gentle crossfade. */
+.product-gallery .hero-image{background:transparent;border:0;padding-top:32px}
+.product-gallery .hero-image figcaption{background:transparent}
+#product-photo{position:relative}
+#product-photo img{display:block}
+#product-photo .photo-outgoing{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:1;transition:opacity 650ms ease-in-out}
+#product-photo .photo-outgoing.photo-faded{opacity:0}
+@media(max-width:600px){.product-gallery .hero-image{padding-top:24px}}

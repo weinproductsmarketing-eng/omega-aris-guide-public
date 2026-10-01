@@ -41,7 +41,22 @@
   const photos=['Front-0s','Front-1s','Left-0s','Left-1s','Right-0s','Right-1s'];
   let photo=0, playing=!matchMedia('(prefers-reduced-motion: reduce)').matches;
   const gallery=document.querySelector('.hero-image'), photoImg=document.querySelector('#product-photo img'), pause=document.getElementById('photo-pause');
-  function showPhoto(){const name=photos[photo], [view,count]=name.split('-'), phones=parseInt(count);const caption=`${view} view · ${phones===0?'without a phone':'one phone'}`;photoImg.src=`assets/${name}.png`;photoImg.alt=`Omega Aris Cricket 660B, ${caption}`;document.getElementById('photo-caption').textContent=caption;document.getElementById('photo-count').textContent=`${photo+1} / ${photos.length}`;}
+  let photoRequest=0;
+  async function showPhoto(){
+    const request=++photoRequest, index=photo, name=photos[index], [view,count]=name.split('-');
+    const caption=`${view} view · ${parseInt(count)===0?'without a phone':'one phone'}`;
+    const next=new Image();next.src=`assets/${name}.png`;
+    try{await next.decode();}catch{return;}
+    if(request!==photoRequest)return;
+    const outgoing=photoImg.cloneNode();outgoing.alt='';outgoing.setAttribute('aria-hidden','true');outgoing.className='photo-outgoing';
+    document.querySelector('#product-photo .photo-outgoing')?.remove();
+    photoImg.parentElement.append(outgoing);
+    photoImg.src=next.src;photoImg.alt=`Omega Aris Cricket 660B, ${caption}`;
+    document.getElementById('photo-caption').textContent=caption;
+    document.getElementById('photo-count').textContent=`${index+1} / ${photos.length}`;
+    requestAnimationFrame(()=>requestAnimationFrame(()=>outgoing.classList.add('photo-faded')));
+    setTimeout(()=>outgoing.remove(),750);
+  }
   function updatePause(){pause.textContent=playing?'Pause photos':'Play photos';}
   document.getElementById('photo-prev').addEventListener('click',()=>{playing=false;photo=(photo+photos.length-1)%photos.length;showPhoto();updatePause()});
   document.getElementById('photo-next').addEventListener('click',()=>{playing=false;photo=(photo+1)%photos.length;showPhoto();updatePause()});
