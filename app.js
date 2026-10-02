@@ -43,12 +43,25 @@
   let photo=0, playing=!matchMedia('(prefers-reduced-motion: reduce)').matches;
   const gallery=document.querySelector('.hero-image'), photoImg=document.querySelector('#product-photo img'), pause=document.getElementById('photo-pause');
   let photoRequest=0;
+  const photoCache=new Map();
+  function loadPhoto(name){
+    if(!photoCache.has(name)){
+      const image=new Image(); image.fetchPriority=name===photos[1]?'high':'low'; image.src=`assets/${name}.${name.startsWith('omega-')?'webp':'png'}`;
+      const ready=image.decode().then(()=>image).catch(()=>{photoCache.delete(name);return null});
+      photoCache.set(name,ready);
+    }
+    return photoCache.get(name);
+  }
+  // Warm the next image first, then the remaining gallery images.
+  loadPhoto(photos[1]);
+  const warmGallery=()=>photos.slice(2).forEach(loadPhoto);
+  if('requestIdleCallback' in window)requestIdleCallback(warmGallery,{timeout:1500});else setTimeout(warmGallery,300);
   async function showPhoto(){
     const request=++photoRequest, index=photo, name=photos[index], [view,count]=name.split('-');
     const inCase=name.startsWith('omega-');
     const caption=inCase?(name==='omega-kit-in-case'?'Omega in the carry case · one phone':'Omega in the carry case · battery pack shown'):`${view} view · ${parseInt(count)===0?'without a phone':'one phone'}`;
-    const next=new Image();next.src=`assets/${name}.${inCase?'webp':'png'}`;
-    try{await next.decode();}catch{return;}
+    const next=await loadPhoto(name);
+    if(!next)return;
     if(request!==photoRequest)return;
     const outgoing=photoImg.cloneNode();outgoing.alt='';outgoing.setAttribute('aria-hidden','true');outgoing.className='photo-outgoing';
     document.querySelector('#product-photo .photo-outgoing')?.remove();
@@ -63,7 +76,7 @@
   document.getElementById('photo-prev').addEventListener('click',()=>{playing=false;photo=(photo+photos.length-1)%photos.length;showPhoto();updatePause()});
   document.getElementById('photo-next').addEventListener('click',()=>{playing=false;photo=(photo+1)%photos.length;showPhoto();updatePause()});
   pause.addEventListener('click',()=>{playing=!playing;updatePause()});
-  setInterval(()=>{if(playing&&!document.hidden&&!gallery.matches(':hover')&&!gallery.contains(document.activeElement)){photo=(photo+1)%photos.length;showPhoto()}},2200);
+  setInterval(()=>{if(playing&&!document.hidden){photo=(photo+1)%photos.length;showPhoto()}},2200);
   document.getElementById('photo-count').textContent=`1 / ${photos.length}`;
   updatePause();render();
 })();
