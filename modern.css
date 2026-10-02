@@ -47,3 +47,20 @@ body{overflow-x:clip}.reveal-video{left:32%;width:68%;object-fit:contain;object-
 .position-labels span{background:#e8eff3;border-radius:12px;padding:10px 14px;font-size:16px}
 @media(max-width:700px){.visual-flow{grid-template-columns:1fr}.visual-action{display:grid;grid-template-columns:42px 1fr;padding:16px 38px 16px 15px;column-gap:12px}.visual-icon{grid-row:1/3}.visual-action>span:last-child{grid-column:2}.action-visual{padding:18px 14px}.permission-visual{grid-template-columns:1fr;gap:22px}.permission-example{max-width:300px;width:100%;margin:auto}.visual-action b{font-size:17px}}
 @media print{.action-visual,.permission-visual{break-inside:avoid}.visual-flow{grid-template-columns:repeat(3,1fr)}}
+
+/* Parts callouts use the supplied single-phone product render. */
+.annotated-product{background:transparent;border:1px solid #dce2df;border-radius:22px;overflow:hidden}
+.annotated-product svg{display:block;width:100%;height:auto}
+.annotated-product figcaption{padding:24px}
+.parts-legend{list-style:none;counter-reset:part;display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:0 0 20px;padding:0}
+.parts-legend li{counter-increment:part;position:relative;padding-left:35px;font-size:16px;line-height:1.55}
+.parts-legend li:before{content:counter(part);position:absolute;left:0;top:0;background:#17568a;color:white;width:26px;height:26px;text-align:center;border-radius:50%;font-size:15px;font-weight:700}
+.parts-legend b,.parts-legend span{display:block}
+.annotated-product small{display:block;color:#596974;font-size:13px;line-height:1.6}
+.setup-details{background:#f1f4f2;border:1px solid #dce2df;border-radius:14px;padding:18px 22px;margin:16px 0}
+.setup-details summary{font-size:18px;font-weight:650;cursor:pointer}
+.setup-details p{font-size:17px}
+.equipment{grid-template-columns:1.1fr 1fr;align-items:start}
+.records{border-top:1px solid var(--line)}
+@media(max-width:900px){.equipment{grid-template-columns:1fr}}
+@media(max-width:600px){.parts-legend{grid-template-columns:1fr}.annotated-product figcaption{padding:20px}.setup-details{padding:16px 18px}}

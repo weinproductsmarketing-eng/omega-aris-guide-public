@@ -1,5 +1,5 @@
 {
-  "checked": "2026-09-24",
+  "checked": "2026-10-02",
   "sources": [
     {
       "id": "p-faq",
@@ -13,48 +13,54 @@
     },
     {
       "id": "p-ios",
-      "title": "Pingcoin \u00b7 US App Store",
+      "title": "Pingcoin · US App Store",
       "url": "https://apps.apple.com/us/app/pingcoin-gold-silver-tester/id6754670308"
     },
     {
       "id": "p-android",
-      "title": "Pingcoin \u00b7 Google Play",
+      "title": "Pingcoin · Google Play",
       "url": "https://play.google.com/store/apps/details?id=com.pingcoin.android.pingcoin"
     },
     {
       "id": "s-ios",
-      "title": "StackerTools \u00b7 US App Store",
+      "title": "StackerTools · US App Store",
       "url": "https://apps.apple.com/us/app/stackertools-app/id6502847897"
     },
     {
       "id": "s-android",
-      "title": "StackerTools \u00b7 Google Play",
+      "title": "StackerTools · Google Play",
       "url": "https://play.google.com/store/apps/details?id=com.soundmoneymetals.stackertools"
     },
     {
       "id": "s-dev",
-      "title": "Sound Money Metals \u00b7 app access",
+      "title": "Sound Money Metals · app access",
       "url": "https://soundmoneymetals.us/"
     },
     {
       "id": "s-shop",
-      "title": "Pocket Pinger \u00b7 developer bundle",
+      "title": "Pocket Pinger · developer bundle",
       "url": "https://coinpingtest.com/"
     },
     {
       "id": "s-web",
-      "title": "StackerTools \u00b7 web app",
+      "title": "StackerTools · web app",
       "url": "https://stackertools.com/home"
     },
     {
       "id": "apple",
-      "title": "Apple \u00b7 downloading apps",
+      "title": "Apple · downloading apps",
       "url": "https://support.apple.com/en-us/102590"
     },
     {
       "id": "google",
-      "title": "Google \u00b7 downloading apps",
+      "title": "Google · downloading apps",
       "url": "https://support.google.com/android/answer/9457058?hl=en"
     }
-  ]
+  ],
+  "hardware_source": {
+    "title": "Wein Products supplied Quick Start and parts diagram",
+    "type": "client-supplied instructions",
+    "reviewed": "2026-10-02",
+    "scope": "Positioning and physical control guidance; follow instructions supplied with the unit. Power specifications and performance claims are not independently validated."
+  }
 }
