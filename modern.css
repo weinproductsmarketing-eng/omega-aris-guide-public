@@ -14,7 +14,7 @@ body{overflow-x:clip}.reveal-video{left:32%;width:68%;object-fit:contain;object-
 .product-gallery .hero-image figcaption{background:transparent}
 #product-photo{position:relative}
 #product-photo img{display:block}
-#product-photo .photo-outgoing{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:1;transition:opacity 650ms ease-in-out}
+#product-photo .photo-outgoing{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:1;transition:opacity 240ms ease-in-out}
 #product-photo .photo-outgoing.photo-faded{opacity:0}
 @media(max-width:600px){.product-gallery .hero-image{padding-top:24px}}
 
@@ -69,3 +69,5 @@ body{overflow-x:clip}.reveal-video{left:32%;width:68%;object-fit:contain;object-
 .brand-logo{display:block;width:132px;height:auto}.brand span{display:block;margin-top:6px}.carry-case{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:56px}.carry-case figure{margin:0}.carry-case img{display:block;width:100%;height:auto;border-radius:22px}.carry-case .plain-steps{padding-left:26px}@media(max-width:760px){.brand-logo{width:108px}.carry-case{grid-template-columns:1fr;gap:24px}.carry-case figure{max-width:520px;margin:auto}}
 
 .site-header{height:96px;box-sizing:border-box;padding-top:8px;padding-bottom:8px}.brand-logo{width:120px}.brand span{margin-top:4px}.cinema-stage{top:96px;height:calc(100svh - 96px)}html{scroll-padding-top:116px}@media(max-width:760px){.site-header{height:84px}.brand-logo{width:100px}.cinema-stage{top:84px;height:calc(100svh - 84px)}html{scroll-padding-top:104px}}
+
+#product-photo{aspect-ratio:4/3}#product-photo img{width:100%;height:100%;object-fit:contain}
