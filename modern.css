@@ -71,3 +71,27 @@ body{overflow-x:clip}.reveal-video{left:32%;width:68%;object-fit:contain;object-
 .site-header{height:96px;box-sizing:border-box;padding-top:8px;padding-bottom:8px}.brand-logo{width:120px}.brand span{margin-top:4px}.cinema-stage{top:96px;height:calc(100svh - 96px)}html{scroll-padding-top:116px}@media(max-width:760px){.site-header{height:84px}.brand-logo{width:100px}.cinema-stage{top:84px;height:calc(100svh - 84px)}html{scroll-padding-top:104px}}
 
 #product-photo{aspect-ratio:4/3}#product-photo img{width:100%;height:100%;object-fit:contain}
+
+/* Mobile hero: reserve real layout space for copy, video and controls. */
+@media(max-width:600px){
+ .cinema{height:200svh}
+ .cinema-stage{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto auto;height:auto;min-height:calc(100svh - 84px);overflow:visible}
+ .cinema-copy{grid-row:1;width:100%;margin:0;padding:32px 24px 28px;min-width:0}
+ .reveal-video{position:relative;grid-row:2;left:auto;top:auto;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;display:block}
+ .cinema-shade{display:none}
+ .cinema-bottom{position:relative;grid-row:3;left:auto;right:auto;bottom:auto;padding:20px 24px max(20px,env(safe-area-inset-bottom));flex-wrap:wrap;min-width:0}
+ .cinema .button{max-width:100%;white-space:normal}
+ .button.secondary{white-space:normal;text-align:left;max-width:100%}
+ .store-link{max-width:100%;overflow-wrap:anywhere}
+ .guide-title>*{min-width:0}
+ .checklist label{min-width:0}
+ .source-links a{overflow-wrap:anywhere}
+ .booklet-download{margin-bottom:24px}
+}
+@media(max-width:360px){
+ .site-header nav{gap:12px}
+ .brand-logo{width:88px}
+ .choices button{font-size:14px}
+ .cinema-copy{padding-left:20px;padding-right:20px}
+ .cinema-bottom{padding-left:20px;padding-right:20px}
+}
